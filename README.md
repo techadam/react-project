@@ -16,4 +16,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Builds the app for production to the `build` folder.<br />
 
 
-Site can be accessed @ react-devtech.netlify.com
+Site can be accessed @ https://react-devtech.netlify.com
