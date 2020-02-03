@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 //Components import 
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -54,6 +54,17 @@ class Register extends Component {
 
 	async register() {
 		let Found = false
+		const {user} = {...this.state}
+
+		if(!user.email || !user.password || !user.name || !user.phone || !user.dob) {
+			Swal.fire({
+			  title: 'Error!',
+			  text: 'All fields required',
+			  icon: 'error',
+			  confirmButtonText: 'Close'
+			})
+			return
+		}
 
 		this.state.users.map(user => {
 			if(user.email === this.state.user.email || user.phone === this.state.user.phone) {
@@ -159,7 +170,7 @@ class Register extends Component {
 
 							<div className="form-group">
 								<button type="button" className="btn btn-custom btn-block rounded-0" onClick={this.register.bind(this)}>Create account</button>
-								<a href="/login" className="btn btn-custom-outline btn-block rounded-0">Login</a>
+								<Link to="/login" className="btn btn-custom-outline btn-block rounded-0">Login</Link>
 							</div>
 						</form>
 					</div>

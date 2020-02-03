@@ -95,6 +95,18 @@ class Profile extends Component {
 	async updateUser() {
 		const userId = this.state.user.id
 
+		const {user} = {...this.state}
+
+		if(!user.email || !user.password || !user.name || !user.phone || !user.dob) {
+			Swal.fire({
+			  title: 'Error!',
+			  text: 'All fields required',
+			  icon: 'error',
+			  confirmButtonText: 'Close'
+			})
+			return
+		}
+
 		if(this.state.user === null) {
 			this.setState({
 				loggedIn: false

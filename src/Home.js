@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import heroImg from './assets/hero.svg'
 import contactImg from './assets/contact.svg'
 import infoImg3 from './assets/info3.svg'
@@ -32,8 +33,8 @@ class Home extends Component {
 					                </div>
 
 					                <p className="hero-desc">Turn risk free passive revenue on auto pilot. It only takes four clicks. Turn risk free passive revenue on auto pilot. It only takes four clicks. Turn risk free passive revenue on auto pilot. It only takes four clicks</p>
-					                <a href="/register" class="btn btn-custom px-3 py-2 shadow mr-3">Create account</a>
-					                <a href="/login" className="btn btn-custom-outline px-3 py-2 shadow">Login to account</a>
+					                <Link to="/register" class="btn btn-custom px-3 py-2 shadow mr-3">Create account</Link>
+					                <Link to="/login" className="btn btn-custom-outline px-3 py-2 shadow">Login to account</Link>
 					            </div>
 					            <div className="col-lg-6 pl-5 hero-img">
 					                <img src={heroImg} alt="" width="100%" />

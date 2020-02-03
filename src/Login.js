@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import ReactLoading from 'react-loading'
@@ -61,6 +61,16 @@ class Login extends Component {
 
 		let notFound = false
 
+		if(!this.state.email || !this.state.password) {
+			Swal.fire({
+			  title: 'Error!',
+			  text: 'All fields required',
+			  icon: 'error',
+			  confirmButtonText: 'Close'
+			})
+			return
+		}
+
 		this.state.users.map(user => {
 			if(user.email === this.state.email && user.password === this.state.password) {
 				localStorage.setItem('loggedIn', 1)
@@ -117,7 +127,7 @@ class Login extends Component {
 
 							<div className="form-group">
 								<button type="button" onClick={this.login.bind(this)} className="btn btn-custom btn-block rounded-0">Sign in</button>
-								<a href="/register" className="btn btn-custom-outline btn-block rounded-0">Create account</a>
+								<Link to="/register" className="btn btn-custom-outline btn-block rounded-0">Create account</Link>
 							</div>
 
 							<div className="mx-auto" style={{display: 'flex', justifyContent: 'center'}}>

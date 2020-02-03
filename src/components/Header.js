@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Header = (props) => {
 	return (
@@ -14,8 +15,8 @@ const Header = (props) => {
 	            {
 		        	!props.loggedIn && 
 		        	<React.Fragment>
-		        		<li><a href="/register" className="">Signup</a></li>
-		            	<li><a href="/login" className="btn btn-custom px-5 text-white">Login</a></li>
+		        		<li><Link to="/register" className="">Signup</Link></li>
+		            	<li><Link href="/login" className="btn btn-custom px-5 text-white">Login</Link></li>
 		        	</React.Fragment>
 		        }
 
