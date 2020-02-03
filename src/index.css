@@ -1,13 +1,214 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,500i,600,600i,700&display=swap');
+
+* {
+	list-style-type: none;
+	text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;*/
+   font-family: 'Muli', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+}
+
+.brand {
+	font-weight: 700 !important;
+}
+
+.text-custom {
+	color: #00BFA6 !important;
+}
+
+.text-custom-2 {
+	color: #0E433C;
+}
+
+.bg-custom {
+	background: #00BFA6 !important;
+	color: #fff;
+}
+
+.btn-custom, .btn-custom:hover {
+	background: #00BFA6;
+	color: #fff;
+}
+
+.btn-custom-outline, .btn-custom-outline:hover {
+	background: #fff;
+	color: #00BFA6;
+	border: 1px solid #00BFA6;
+}
+
+.custom-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.brandcheckLabel,
+#brandcheckBox {
+	display: none;
+}
+
+.brand-menu {
+
+}
+
+.brand-menu li {
+	display: inline-block;
+	margin-left: 2rem;
+}
+
+
+ul.brand-menu li.close-menu {
+    display: none;
+}
+
+.brand-menu li a, .brand-menu li button {
+	color: #333;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+.hero-title h3 {
+	font-weight: 700;
+}
+
+.hero-desc {
+	line-height: 2rem;
+}
+
+.info-section {
+	background-image: url('./assets/bglanding.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+footer {
+	background: #2A394C;
+	color: #fff;
+}
+
+.footer-menu {
+	list-style-position: inside;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-menu li a {
+	color: #fff;
+}
+
+
+/* Login page styles */
+.fullpage {
+	min-height: 100vh !important;
+	height: auto;
+}
+
+
+.login-hero-img {
+	min-height: 100vh !important;
+	height: inherit;
+	background-image: url('./assets/think.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+@media only screen and (max-width: 995px) {
+	.login-hero-img {
+		display: none;
+	}
+
+	.login-content {
+		min-width: 100% !important;
+	}
+}
+
+
+@media only screen and (max-width: 930px) {
+    .hero-caption {
+        flex-basis: 100%;
+        padding: 0px !important;
+    }
+
+    .hero-section {
+    	padding-top: 0px !important;
+    }
+    
+    .hero-img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .brandcheckLabel {
+        display: inline-block;
+    } 
+    
+    ul.brand-menu {
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: -100%;
+        padding-top: 40px;
+        border-top: 1px solid #ccc;
+        transition: 0.5s;
+        z-index: 9999;
+    }
+    
+    ul.brand-menu li {
+        display: block;
+        margin-left: 0px;
+        margin-bottom: 13px;
+        text-align: center;
+    }
+    
+    ul.brand-menu li.close-menu {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 10px;
+        align-items: center;
+    }
+    
+    ul.brand-menu li.close-menu label {
+        height: 40px !important;
+        width: 40px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #00BFA6;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 50%;
+    }
+    
+    ul.brand-menu li a {
+        font-size: 1.3rem;
+        display: block;
+        text-transform: uppercase;
+    }
+    
+    #brandcheckBox:checked ~ ul.brand-menu {
+        left: -1.8%;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .hero-caption {
+        padding-right: 0px;
+    }
+    
+    .hero-title h3 {
+        display: inline;
+        font-size: 1.4rem;
+    }
 }
